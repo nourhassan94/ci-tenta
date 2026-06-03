@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: calculator-app
+  name: calculator-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calculator-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: calculator-app
+    spec:
+      containers:
+      - image: calculator2:latest
+        name: calculator2
+        imagePullPolicy: Never
+        resources: {}
+status: {}
